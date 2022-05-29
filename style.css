@@ -1,0 +1,251 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.player-panel {
+    display: flex;
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+.player-panel img {
+    width: 60px;
+    height: 60px;
+    margin-right: 16px;
+}
+
+.player-panel div {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    margin-left: 16px;
+}
+
+.player-inactiv {
+    opacity: 0.5;
+}
+
+.player-activ {
+    border: 3px solid rgb(147, 23, 23);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr {
+    width: 399px;
+}
+
+td {
+    width: 133px;
+    height: 133px;
+    border: 5px solid black;
+    position: relative;
+}
+
+td:hover {
+    background-color: rgba(232, 232, 232, 0.538);
+}
+
+tr:first-child td {
+    border-top: 0;
+}
+
+tr td:first-child {
+    border-left: 0;
+}
+
+tr:last-child td {
+    border-bottom: 0;
+}
+
+tr td:last-child {
+    border-right: 0;
+}
+
+.shape {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 26px;
+    bottom: 0;
+    right: 0;
+    left: 26px;
+}
+
+.d-none {
+    display: none;
+}
+
+.horizontal-line {
+    height: 10px;
+    width: 350px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    transform: scaleX(0.0);
+    transition: transform 225ms ease-in-out;
+}
+
+/* .make-vertical {
+    transform: rotate(90deg) scaleY(0.0);
+} */
+
+.vertical-line {
+    width: 10px;
+    height: 350px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    transform: scaleY(0.0);
+    transition: transform 225ms ease-in-out;
+}
+
+.game-over {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    z-index: 2;
+    animation: zoomIn 225ms ease-in-out;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.restart-btn {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: darkred;
+    z-index: 2;
+    width: 300px;
+    height: 100px;
+    color: white;
+    font-size: 46px;
+    cursor: pointer;
+    margin-top: 16px;
+}
+
+.restart-btn:hover {
+    opacity: 0.7;
+}
+
+.video {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -1000;
+	overflow: hidden;
+    opacity: 0.5;
+}
+
+.video-end {
+	width: auto;
+	height: auto;
+	z-index: 2;
+	overflow: hidden;
+}
+
+.end-box {
+    background-color: #040911;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 2;
+    animation: zoomIn 225ms ease-in-out;
+}
+
+.end-box span {
+    font-size: 46px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: white;
+}
+
+@media (max-width: 450px) {
+    tr {
+        width: 270px;
+    }
+    
+    td {
+        width: 90px;
+        height: 90px;
+    }
+
+    .shape {
+        width: 50px;
+        height: 50px;
+    }
+
+    .player-panel {
+        font-size: 24px;
+    }
+
+    .player-panel img {
+        width: 40px;
+        height: 40px;
+        margin-right: 8px;
+    }
+
+    .player-panel div {
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+}
+
+@media (max-width: 400px) {
+    .end-box span {
+        font-size: 24px;
+    }
+
+    .restart-btn {
+        width: 220px;
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 320px) {
+    tr {
+        width: 240px;
+    }
+    
+    td {
+        width: 80px;
+        height: 80px;
+    }
+
+    .shape {
+        width: 40px;
+        height: 40px;
+    }
+
+    .player-panel {
+        font-size: 20px;
+    }
+}
